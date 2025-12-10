@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useAuth } from "../Context/AuthContext"
+
 
 
 export const columns =[
@@ -50,8 +50,8 @@ export const columns =[
 export const WorkerAttButtons = ({status,id,statusChange})=>{
   const markworker = async(status,id)=>{
 
-  const {serverLink} = useAuth()
-const res = await axios.put(`${serverLink}/api/workerAttendance/update/${id}`,{status})
+ 
+const res = await axios.put(`https://hrms2-back-end.onrender.com/api/workerAttendance/update/${id}`,{status})
 
 if(res.data.success){
   statusChange()
@@ -110,7 +110,7 @@ Leave
 
 export const OverTime = ({id,OT,statusChange}) => {
   const [overtime, setOvertime] = useState("");
-   const {serverLink} = useAuth()
+   
 
   const handleChange = (e) => {
     setOvertime(e.target.value);
@@ -122,7 +122,7 @@ export const OverTime = ({id,OT,statusChange}) => {
      const OtUpdate = async()=>{
 
     try{
-      const res = await  axios.put(`${serverLink}/api/workerAttendance/updateOT/${id}`,{overtime})
+      const res = await  axios.put(`https://hrms2-back-end.onrender.com/api/workerAttendance/updateOT/${id}`,{overtime})
 if(res.data.success){
   statusChange()
   console.log(OT)
