@@ -138,7 +138,7 @@ function AuthContext({ children }) {
   const navigate = useNavigate();
 
 
-  const serverLink = "http://localhost:5000"
+  const serverLink = "https://hrms2-back-end.onrender.com"
 
   useEffect(() => {
     const userVerify = async () => {
