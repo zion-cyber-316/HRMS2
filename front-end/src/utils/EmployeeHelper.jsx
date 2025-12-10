@@ -44,7 +44,7 @@ export const columns =[
 
 export const fetchDepartments = async () => {
   try {
-    const res = await axios.get(`http://localhost:5000/api/department`);
+    const res = await axios.get(`https://hrms2-back-end.onrender.com/api/department`);
     if (res.data.success) {
       return res.data.Departments;
     } else {
@@ -82,7 +82,7 @@ export const fetchDepartments = async () => {
    
     let employees
 try{
-  const res = await axios.get(`http://localhost:5000/api/employee/department/${id}`)
+  const res = await axios.get(`https://hrms2-back-end.onrender.com/api/employee/department/${id}`)
 console.log(res)
   if(res.data.success){
     employees = res.data.employees
